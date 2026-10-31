@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Tech Path</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">TECH<span>PATH</span><i>.</i></a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="site-nav">
+      <a href="index.html">Home</a><a href="about.html">About</a>
+      <a href="services.html">Services</a><a href="projects.html">Projects</a>
+      <a href="careers.html">Careers</a><a href="skills.html">Skills</a><a class="active" href="contact.html">Contact</a>
+    </nav>
+    <a class="header-cta" href="contact.html">Start a project <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">LET’S START A CONVERSATION</p>
+      <h1>Tell us what’s<br><em>on your mind.</em></h1>
+      <p>Share a little about your idea or challenge. We’ll help you figure out a useful next step.</p>
+    </section>
+
+    <section class="section contact-layout">
+      <div class="contact-info"><p class="eyebrow eyebrow-dark">GET IN TOUCH</p><h2>Start with<br>a hello.</h2><p>For project questions, collaboration, or a quick introduction:</p><a href="mailto:hello@techpath.example">hello@techpath.example</a><div class="contact-detail"><span>RESPONSE TIME</span><b>Usually within 2 business days</b></div></div>
+
+      <form class="contact-form">
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" placeholder="e.g. Alex Kumar" required>
+
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+        <label for="topic">What would you like help with?</label>
+        <select id="topic" name="topic" required>
+          <option value="">Choose a topic</option>
+          <option>Website design or development</option>
+          <option>Digital strategy</option>
+          <option>Product design</option>
+          <option>Something else</option>
+        </select>
+
+        <label for="message">A little about your project</label>
+        <textarea id="message" name="message" rows="5" placeholder="Tell us what you’re planning..." required></textarea>
+
+        <button class="button button-orange" type="submit">Prepare email <span>→</span></button>
+        <p class="form-note">This demo form opens your email app; it does not store your information.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="index.html">TECH<span>PATH</span><i>.</i></a><p>Thoughtful technology for what’s next.</p>
+    <div class="footer-links"><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Projects</a></div>
+    <small>© <span class="current-year"></span> Tech Path. All rights reserved.</small>
+  </footer>
+</body>
+</html>
