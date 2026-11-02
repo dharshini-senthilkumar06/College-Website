@@ -36,25 +36,35 @@ filterButtons.forEach((button) => {
   });
 });
 
-// Prepare an email from the contact form
+// Save contact form enquiry to Supabase
 const contactForm = document.querySelector(".contact-form");
 
 if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
+  const supabaseClient = window.supabase.createClient(
+  "https://takcwipanpoxjfnvwpmr.supabase.co",
+  "sb_publishable_Baup-2WFjZ_thOhguTiSKA_gaGrldWJ"
+);
+
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const formData = new FormData(contactForm);
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const topic = formData.get("topic");
-    const message = formData.get("message");
 
-    const subject = encodeURIComponent(`Website enquiry: ${topic}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nTopic: ${topic}\n\nProject details:\n${message}`
-    );
+    const { error } = await supabaseClient
+      .from("enquiries")
+      .insert({
+        name: formData.get("name"),
+        email: formData.get("email"),
+        topic: formData.get("topic"),
+        message: formData.get("message")
+      });
 
-    window.location.href =
-      `mailto:hello@techpath.example?subject=${subject}&body=${body}`;
+    if (error) {
+      alert("not saved: " + error.message);
+      return;
+    }
+
+    alert("Enquiry saved sucessfully!");
+    contactForm.reset();
   });
 }
